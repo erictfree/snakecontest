@@ -12,10 +12,14 @@ class AlanaLeeSnake extends Snake {
     new PVector(0, 1), // Down
     new PVector(0, -1)   // Up
   };
+  
+   PVector lastDir;
+  
 
   AlanaLeeSnake(int x, int y) {
     super(x, y, "Lovejoy");
     // updateInterval= 1000000000; //less is faster
+    //this.debug = true;
   }
 
   void think(ArrayList<Food> food, ArrayList<Snake> snakes) {
@@ -27,7 +31,7 @@ class AlanaLeeSnake extends Snake {
       } else if (this.segments.size() >= 50 ) {
         updateInterval= 100; //less is faster
       } else {
-        updateInterval= 50; //less is faster
+        updateInterval= 10; //less is faster
       }
     }
 
@@ -42,6 +46,9 @@ class AlanaLeeSnake extends Snake {
 
     // dir represents the direction we are going to move in N/S/E/W
     PVector dir = null;
+          if (lastDir == null) {
+      lastDir = dir;
+      }
 
     // check to see if snake needs to left or right until in same column as food
     // then check to see if it needs to go up or down
@@ -96,7 +103,7 @@ class AlanaLeeSnake extends Snake {
         PVector tempDir = possibleDirs[i];
         PVector tempPos = new PVector(head.x + tempDir.x, head.y + tempDir.y);
 
-        if (!edgeDetect(tempPos) && !overlap(tempPos, snakes) && (-possibleDirs[i].x != dir.x ||  dir.x == 0) && (-possibleDirs[i].y != dir.y ||  dir.y == 0)) {
+        if (!edgeDetect(tempPos) && !overlap(tempPos, snakes) && (-possibleDirs[i].x != lastDir.x ||  lastDir.x == 0) && (-possibleDirs[i].y != lastDir.y ||  lastDir.y == 0)) {
           dir = new PVector(possibleDirs[i].x, possibleDirs[i].y );
           evenodd += 1;
           break;
@@ -110,6 +117,7 @@ class AlanaLeeSnake extends Snake {
     if (hitSomething == false) {
       setDirection(dir.x, dir.y);
     }
+    lastDir = dir;
   }
 
   Food getClosestFood(Snake snake, ArrayList<Food> food) {

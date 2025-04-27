@@ -21,6 +21,7 @@ final int INITIAL_SNAKES = 50;
 final boolean USE_TIME_LIMIT = true;  // Flag to enable/disable time limit
 final int MAX_ROUND_TIME = 3* 60 * 1000;
 final int GRIDSIZE = 20;
+boolean stopscoring = false;
 int colorIndex = 0;
 
 // Grid dimensions
@@ -74,9 +75,14 @@ void setup() {
   startNewGame();
 
   // Load and start the soundtrack
-  soundtrack = new SoundFile(this, "theme.mp3");
+  soundtrack = getSoundtrack();
   soundtrack.loop();
   soundtrack.amp(0.8);  // Set volume to 80%
+}
+
+SoundFile getSoundtrack() {
+  int themeNumber = (int) random(1, 10); // random(1,6) picks 1,2,3,4, or 5
+  return new SoundFile(this, "theme" + themeNumber + ".mp3");
 }
 
 void draw() {
@@ -86,7 +92,7 @@ void draw() {
   } else {
     background(0);
   }
-  
+
   // Draw grid
   drawGrid();
 
@@ -124,6 +130,8 @@ void draw() {
         winnerColor = snakes.get(0).getColor();
         winnerScore = snakes.get(0).getScore();  // Store the winning score
         finalTime = millis() - roundStartTime;  // Store final time
+        stopscoring = true;
+        printTop10ByScore();
       }
     }
   }
@@ -134,11 +142,11 @@ void draw() {
   // Maintain minimum food, but don't exceed maximum
   while (food.size() < maxFood) {
     Food newFood;
-    if (random(100) <= 5) {
-      newFood = new Food(0, 0, int(random(2, 20)));  // 5-point food
-    } else {
+    //if (random(100) <= 5) {
+    //  newFood = new Food(0, 0, int(random(2, 20)));  // 5-point food
+    //} else {
       newFood = new Food(0, 0);     // Regular food
-    }
+ //   }
     food.add(newFood.spawnRandom(width, height, snakes, food));
   }
 
@@ -254,8 +262,8 @@ void endRoundByTimeLimit() {
     winnerColor = highestScorer.getColor();
     winnerScore = highestScorer.getScore();  // Store the winning score
   }
+  printTop10ByScore();
 }
-
 
 void drawWinnerScreen() {
   // Update celebration effects
@@ -335,5 +343,27 @@ void drawGrid() {
   }
   for (int y = 0; y < height; y += GRIDSIZE) {
     line(0, y, width, y);
+  }
+}
+
+void printTop10ByScore() {
+  List<Snake> allSnakes = new ArrayList<>();
+  allSnakes.addAll(snakes);
+  allSnakes.addAll(deadSnakes);
+
+  if (snakes.size() == 1) {
+    Snake lastSnake = snakes.get(0);
+    int topScore = allSnakes.stream().mapToInt(Snake::getScore).max().orElse(0);
+    if (lastSnake.getScore() <= topScore) {
+      lastSnake.score = topScore + 1;
+    }
+  }
+
+  allSnakes.sort((s1, s2) -> Integer.compare(s2.getScore(), s1.getScore()));
+
+  System.out.println("Top 10 Players by Score:");
+  for (int i = 0; i < allSnakes.size(); i++) {
+    Snake snake = allSnakes.get(i);
+    System.out.println((i + 1) + ". " + snake.getName() + ": " + snake.getScore());
   }
 }

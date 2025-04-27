@@ -17,7 +17,7 @@ abstract class Snake {
   int gridSize;                 // Size of each grid cell
   float nameOffset;             // How far above the snake the name appears
   float maxMult;
-  
+
   boolean showName;             // Whether to show the snake's name
 
   boolean debug = false;
@@ -33,6 +33,9 @@ abstract class Snake {
   Snake(int x, int y, String name) {
     // Initialize core properties
     this.name = name;//generateSillyName();//name;
+    if (this.name.endsWith("Snake")) {
+      this.name = this.name.substring(0, this.name.length() - "Snake".length());
+    }
     this.snakeColor = ARCADE_COLORS[colorIndex++];
     this.alive = true;
     this.score = 1;
@@ -251,7 +254,7 @@ abstract class Snake {
 
 
     if (abs(direction.x) > 1 || abs(direction.y) > 1 || (abs(direction.x) + abs(direction.y) > 1)) {
-      println("Invalid direction in move: (" + direction.x + ", " + direction.y + "). Resetting to (0, 0).");
+      //println("Invalid direction in move: (" + direction.x + ", " + direction.y + "). Resetting to (0, 0).");
       direction = new PVector(0, 0); // Stop movement to prevent errors
     }
 
@@ -283,17 +286,17 @@ abstract class Snake {
   void setDirection(float dx, float dy) {
     // Validate direction components: must be -1, 0, or 1
     if (dx != -1 && dx != 0 && dx != 1) {
-      println("Invalid dx value: " + dx + ". Must be -1, 0, or 1.");
+      //println("Invalid dx value: " + dx + ". Must be -1, 0, or 1.");
       return;
     }
     if (dy != -1 && dy != 0 && dy != 1) {
-      println("Invalid dy value: " + dy + ". Must be -1, 0, or 1.");
+      //println("Invalid dy value: " + dy + ". Must be -1, 0, or 1.");
       return;
     }
 
     // Ensure the snake moves in only one direction (not diagonally)
     if (abs(dx) + abs(dy) > 1) {
-      println("Invalid direction: (" + dx + ", " + dy + "). Cannot move diagonally.");
+      //println("Invalid direction: (" + dx + ", " + dy + "). Cannot move diagonally.");
       return;
     }
 
@@ -301,7 +304,7 @@ abstract class Snake {
     if (direction.x != -dx || direction.y != -dy) {
       nextDirection = new PVector(dx, dy);
     } else {
-      println("Invalid direction change: (" + dx + ", " + dy + "). Cannot make a 180-degree turn.");
+      //println("Invalid direction change: (" + dx + ", " + dy + "). Cannot make a 180-degree turn.");
     }
   }
 

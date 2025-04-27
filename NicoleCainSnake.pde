@@ -28,7 +28,7 @@ class NicoleCainSnake extends Snake {
     };
 
 
-    println("closest food" + closestFood.x + " " + closestFood.y);
+    //println("closest food" + closestFood.x + " " + closestFood.y);
 
     PVector head = this.segments.get(0);
 
@@ -57,7 +57,7 @@ class NicoleCainSnake extends Snake {
 
 
       if (edgeDetect(newPos)) { //hit a wall
-        println("hit wall!");
+        //println("hit wall!");
 
 
         dir = possibleDirs [index]; //cycles through which movement is best outcome
@@ -65,7 +65,7 @@ class NicoleCainSnake extends Snake {
         if (index == 4) {
           index = 0;
         }
-        println("turn" + head.x + head.y);
+        //println("turn" + head.x + head.y);
       }
 
 

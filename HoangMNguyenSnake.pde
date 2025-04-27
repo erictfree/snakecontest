@@ -35,7 +35,7 @@ class HoangMNguyenSnake extends Snake {
 
     dx = closestFood.x - head.x;  // figure out how far the food is
     dy = closestFood.y - head.y;  // in x and y distances
-    println ("closet food: " + dx + "_____" +dy);
+    //println ("closet food: " + dx + "_____" +dy);
 
     PVector dir = null;
     if (dy > 0) {

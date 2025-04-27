@@ -17,7 +17,7 @@ class AlexRosemannSnake extends Snake {
     Food target = findClosestFood(food); // Loacate closest food
     
     if (target != null) {
-      println("Found closest food at (" + target.x + ", " + target.y + ")");
+      //println("Found closest food at (" + target.x + ", " + target.y + ")");
       PVector move = safeMoveToward(target, snakes); // Try to go safely toward food
       if (move != null) {
         //println("Moving toward food with move (" + move.x + ", " + move.y + ")");

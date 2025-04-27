@@ -132,7 +132,7 @@ class WesleyKuykendallSnake extends Snake {
       fill(random(255), 0, 0);
     }
     stroke(255);
-    println(size);
+    //println(size);
     rect(x, y, size, size, 5);
   }
 }

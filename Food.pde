@@ -41,6 +41,7 @@ class Food {
 
     // Inner circle
     fill(foodColor);
+    fill(255);
     
     if (this.points > 1) {
       fill(255, 255, 255);

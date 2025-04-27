@@ -1,4 +1,5 @@
-String[] snakeNames = new String[] {
+// --- Section 1 ---
+String[] snakeNames1 = new String[] {
   "AbrilIrachetaSnake",
   "AdahSkaffSnake",
   "AdamZuberSnake",
@@ -18,7 +19,12 @@ String[] snakeNames = new String[] {
   "ChiomaAguoruSnake",
   "ClaireHuangSnake",
   "DaeYparraguirreSnake",
-  "DanielColcockSnake",
+  "DanielColcockSnake"
+};
+
+// --- Section 2 (commented out) ---
+
+String[] snakeNames = new String[] {
   "DanielPortilloSnake",
   "DavidChienSnake",
   "ElizabethHanSnake",
@@ -38,7 +44,11 @@ String[] snakeNames = new String[] {
   "KeeganBeardSnake",
   "KeiraHumphriesSnake",
   "LanaNguyenSnake",
-  "LaurenCogbillSnake",
+  "LaurenCogbillSnake"
+};
+
+// --- Section 3 (commented out) ---
+String[] snakeNames3 = new String[] {
   "LillianCoan",
   "LinhTranSnake",
   "MarcoHurtadoSnake",
@@ -47,7 +57,7 @@ String[] snakeNames = new String[] {
   "NatalieSottekSnake",
   "NickMorrisSnake",
   "NicoleCainSnake",
-  // "NoahRutledgeSnake", - not a real submission
+  //"NoahRutledgeSnake", // not a real submission
   "OllieOtouBranckaertSnake",
   "RenBairdSnake",
   "RinNishiwakiSnake",
@@ -66,6 +76,7 @@ String[] snakeNames = new String[] {
   //"MichelleEstrellaSnake",
   "VanessaFloresSnake"
 };
+
 
 
 Snake spawnNewSnake(int x, int y, String name) {

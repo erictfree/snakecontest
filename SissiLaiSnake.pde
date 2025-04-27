@@ -13,12 +13,12 @@ class SissiLaiSnake extends Snake {
 
     // Check if more than 2 minutes 55 seconds have passed and if there are still other snakes alive
     if (currentTime > 170000) { // If 170000ms (2 minutes 55 seconds) have passed
-      println("set time have passed.");
+      //println("set time have passed.");
       if (otherSnakesAlive(snakes)) { // Check if there are other snakes still alive
-        println("Other snakes are still alive. Increasing speed to 20.");
+        //println("Other snakes are still alive. Increasing speed to 20.");
         updateInterval = 20; // Increase speed to 20 if other snakes are alive
       } else {
-        println("No other snakes alive. Speed remains unchanged.");
+        //println("No other snakes alive. Speed remains unchanged.");
       }
     }
 
@@ -34,33 +34,33 @@ class SissiLaiSnake extends Snake {
       // Check if the new position is safe
       if (isSafe(newPos, snakes)) {
         float safetyScore = calculateSafetyScore(newPos, snakes); // Calculate the safety score for this position
-        println("Direction (" + dir.x + ", " + dir.y + ") is safe with safety score: " + safetyScore); // Log the safety score
+        //println("Direction (" + dir.x + ", " + dir.y + ") is safe with safety score: " + safetyScore); // Log the safety score
         if (safetyScore > maxSafetyScore) { // If the safety score is higher than the current max, update it
           maxSafetyScore = safetyScore;
           safestDirection = dir; // Set this direction as the safest
         }
       } else {
-        println("Direction (" + dir.x + ", " + dir.y + ") is NOT safe."); // Log if the direction is not safe
+        //println("Direction (" + dir.x + ", " + dir.y + ") is NOT safe."); // Log if the direction is not safe
       }
     }
 
     // Find food in the safest direction
     if (safestDirection != null) { // If a safe direction was found
-      println("Safest direction chosen: (" + safestDirection.x + ", " + safestDirection.y + ")");
+      //println("Safest direction chosen: (" + safestDirection.x + ", " + safestDirection.y + ")");
       Food targetFood = findClosestFood(food, safestDirection, snakes); // Find the closest food in the safest direction
       if (targetFood != null) { // If food is found
         PVector foodDir = calculateDirectionToFood(targetFood); // Calculate the direction to the food
-        println("Closest food found at (" + targetFood.x + ", " + targetFood.y + "). Moving toward it.");
+        //println("Closest food found at (" + targetFood.x + ", " + targetFood.y + "). Moving toward it.");
         if (isSafe(segments.get(0).copy().add(foodDir), snakes)) { // If it's safe to move toward the food
-          println("Moving safely toward food.");
+          //println("Moving safely toward food.");
           setDirection(foodDir.x, foodDir.y); // Set the direction towards the food
           return;
         }
       }
-      println("No reachable food. Moving in safest direction.");
+      //println("No reachable food. Moving in safest direction.");
       setDirection(safestDirection.x, safestDirection.y); // If no food is reachable, move in the safest direction
     } else {
-      println("No safe direction found. Stopping.");
+      //println("No safe direction found. Stopping.");
       setDirection(0, 0); // If no safe direction is found, stop the snake
     }
   }
@@ -86,11 +86,11 @@ class SissiLaiSnake extends Snake {
   boolean otherSnakesAlive(ArrayList<Snake> snakes) {
     for (Snake snake : snakes) { // Iterate through all snakes
       if (!snake.equals(this) && snake.isAlive()) { // Check if the snake is not itself and is alive
-        println("Another snake is alive: " + snake.name);
+        //println("Another snake is alive: " + snake.name);
         return true; // If another snake is alive, return true
       }
     }
-    println("No other snakes are alive.");
+    //println("No other snakes are alive.");
     return false; // If no other snakes are alive, return false
   }
 
