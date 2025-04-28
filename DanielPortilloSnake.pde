@@ -22,17 +22,17 @@ class DanielPortilloSnake extends Snake {
       while (unsafe && testDist > 0) {
         if (testSafe(testDist, getLeftDir(dir))) {
           // turn left
-          println("TURN LEFT");
+          //println("TURN LEFT");
           dir = getLeftDir(this.direction);
           unsafe = false;
         } else if (testSafe(testDist, getRightDir(dir))) {
           // turn right
-          println("TURN RIGHT");
+          //println("TURN RIGHT");
           dir = getRightDir(this.direction);
           unsafe = false;
         } else if (testSafe(testDist, dir)) {
           // stay steady
-          println("STEADY");
+          //println("STEADY");
           unsafe = false;
         }
         testDist -= 1;
@@ -53,7 +53,7 @@ class DanielPortilloSnake extends Snake {
       PVector face = this.segments.get(0);
       PVector nearestFood = getNearestFood(face);
       PVector foodDiff = PVector.sub(nearestFood, face);
-      println(foodDiff);
+      //println(foodDiff);
       
       PVector directionToFood;
       if (abs(foodDiff.x) > abs(foodDiff.y)) {
@@ -124,7 +124,7 @@ class DanielPortilloSnake extends Snake {
           PVector face_pos = this.segments.get(0);
           PVector test_pos = PVector.add(face_pos, PVector.mult(dir, i));
           if (segment.x == test_pos.x && segment.y == test_pos.y) {
-            println("SNAKE");
+            //println("SNAKE");
             return false;
           }
         }
@@ -133,7 +133,7 @@ class DanielPortilloSnake extends Snake {
     
     PVector farTestPos = PVector.add(this.segments.get(0), PVector.mult(dir, dist));
     if (farTestPos.x < 0 || farTestPos.x >= width/20 || farTestPos.y < 0 || farTestPos.y >= height/20) {
-      println("WALL");
+      //println("WALL");
       return false;
     }
     

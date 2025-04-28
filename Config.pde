@@ -6,85 +6,158 @@ String[] snakeNames1 = new String[] {
   "AlanZhouSnake",
   "AlanaLeeSnake",
   "AlexRosemannSnake",
+  "AllysonSalasSnake",
   "AndrewHeitmeyersnake",
   "AngelDuranGonzalezSnake",
   "AnnabelleKimSnake",
   "ArielLagunasSnake",
   "AvaCarzolaSnake",
+  "BriannaTorresSnake",
   "BeccaYoungersSnake",
+    "BrandonWickenSnake",
   "CameronAllisonSnake",
   "CarlyMillsSnake",
   "CharisElkintonSnake",
   "ChelseaLeeSnake",
   "ChiomaAguoruSnake",
-  "ClaireHuangSnake",
-  "DaeYparraguirreSnake",
-  "DanielColcockSnake"
+  "ClaireHuangSnake"
+
 };
 
-// --- Section 2 (commented out) ---
-
-String[] snakeNames = new String[] {
+String[] snakeNames2 = new String[] {
+  "DaeYparraguirreSnake",
+  "DanielColcockSnake",
   "DanielPortilloSnake",
+  "DevonVoylesSnake",
   "DavidChienSnake",
   "ElizabethHanSnake",
+  "EllaBagbySnake",
   "ElvisLeeSnake",
   "EricMoczygembaSnake",
   "EvaJimenezSnake",
+  "EverestNguyenSnake",
+  "EzraEstradaSnake",
   "FridaBalderas",
+  "HeatherKimSnake",
   "HaydenRossSnake",
+  "HelenRadzaSnake",
   "HoangMNguyenSnake",
+  "JaeSandwegSnake",
   "JeremyScheppersSnake",
   "JialiJaddangiSnakee",
   "JocelynePartidaSnake",
   "JosiahVillarrealFloresSnake",
-  "JovannaMolinaSnake",
-  "KalebAzizSnake",
+
+};
+  
+  String[] snakeNames = new String[] {
+
+  "KalebAzizSnake",  // invsible
+  "KattiaMoralesSnake",
   "KayliePerezSnake",
+  "KaylaMarinSnake",
   "KeeganBeardSnake",
   "KeiraHumphriesSnake",
+  "KimNguyenSnake",
+  "KylaPatelSnake",
   "LanaNguyenSnake",
-  "LaurenCogbillSnake"
-};
-
-// --- Section 3 (commented out) ---
-String[] snakeNames3 = new String[] {
+  "LaurenCogbillSnake",
+   "LaurenFinnertySnake",
   "LillianCoan",
   "LinhTranSnake",
+  "LuisTorresMillanSnake",
+  "LuxiWangSnake",
+  "MarceloMendezSnake",
   "MarcoHurtadoSnake",
-  "MelikeKara",
+  "MelikeKaraSnake",
   "NaomiVegaSnake",
   "NatalieSottekSnake",
   "NickMorrisSnake",
   "NicoleCainSnake",
-  //"NoahRutledgeSnake", // not a real submission
-  "OllieOtouBranckaertSnake",
-  "RenBairdSnake",
+  "NoahRutledgeSnake", // not a real submission
+
+
+};
+  
+  String[] snakeNames4 = new String[] {
+      "OllieOtouBranckaertSnake",
+      "RenBairdSnake",
+  "ReginaAvilaSnake",
   "RinNishiwakiSnake",
   "RosalindaJoachimSnake",
   "SarahGruberSnake",
   "SebastianNietoSnake",
   "SethEastmanSnake",
   "SissiLaiSnake",
+  "SkylarEvansSnake",
   "SydneyKittelbergerSnake",
+  "TanmayeeBharadwajSnake",
   "TheodoreChauSnake",
+  "ThomasChunSnake",
   "TreTrevinoSnake",
   "WesleyKuykendallSnake",
   "YasminGarciaSnake",
   "ZahraMehdiSnake",
-  "BrandonWickenSnake",
+  "YarisAmayaOrellanaSnake",
   //"MichelleEstrellaSnake",
-  "VanessaFloresSnake"
-};
+  "VanessaFloresSnake",
+    "JovannaMolinaSnake",
+      "CrystalNguyenSnake"
+  };
+
 
 
 
 Snake spawnNewSnake(int x, int y, String name) {
   switch (name) {
+     case "YarisAmayaOrellanaSnake":
+    return new YarisAmayaOrellanaSnake(x, y);
+    case "SkylarEvansSnake":
+return new SkylarEvansSnake(x,y);
+    case "KimNguyenSnake":
+return new KimNguyenSnake(x,y);
+case "AllysonSalasSnake":
+return new AllysonSalasSnake(x,y);
+case "LaurenFinnertySnake":
+    return new LaurenFinnertySnake(x, y);
+//case "KylaPatelSnake":
+//    return new KylaPatelSnake(x, y);
+  case "ThomasChunSnake":
+    return new ThomasChunSnake(x, y);
+  case "TanmayeeBharadwajSnake":
+    return new TanmayeeBharadwajSnake(x, y);
+  case "ReginaAvilaSnake":
+    return new ReginaAvilaSnake(x, y);
+  case "MarceloMendezSnake":
+    return new MarceloMendezSnake(x, y);
+  case "LuxiWangSnake":
+    return new LuxiWangSnake(x, y);
+  case "LuisTorresMillanSnake":
+    return new LuisTorresMillanSnake(x, y);
+  case "KaylaMarinSnake":
+    return new KaylaMarinSnake(x, y);
+  case "KattiaMoralesSnake":
+    return new KattiaMoralesSnake(x, y);
+  case "JaeSandwegSnake":
+    return new JaeSandwegSnake(x, y);
+  case "HelenRadzaSnake":
+    return new HelenRadzaSnake(x, y);
+  case "HeatherKimSnake":
+    return new HeatherKimSnake(x, y);
+  case "EzraEstradaSnake":
+    return new EzraEstradaSnake(x, y);
+  case "EllaBagbySnake":
+    return new EllaBagbySnake(x, y);
+  case "EverestNguyenSnake":
+    return new EverestNguyenSnake(x, y);
+  case "DevonVoylesSnake":
+    return new DevonVoylesSnake(x, y);
   case "AbrilIrachetaSnake":
     return new AbrilIrachetaSnake(x, y);
   case "AdahSkaffSnake":
     return new AdahSkaffSnake(x, y);
+  case "BriannaTorresSnake":
+    return new BriannaTorresSnake(x, y);
   case "AdamZuberSnake":
     return new AdamZuberSnake(x, y);
   case "AlanZhouSnake":
@@ -117,6 +190,8 @@ Snake spawnNewSnake(int x, int y, String name) {
     return new ChiomaAguoruSnake(x, y);
   case "ClaireHuangSnake":
     return new ClaireHuangSnake(x, y);
+  case "CrystalNguyenSnake":
+    return new CrystalNguyenSnake(x, y);
   case "DaeYparraguirreSnake":
     return new DaeYparraguirreSnake(x, y);
   case "DanielColcockSnake":
@@ -167,8 +242,8 @@ Snake spawnNewSnake(int x, int y, String name) {
     return new LinhTranSnake(x, y);
   case "MarcoHurtadoSnake":
     return new MarcoHurtadoSnake(x, y);
-  //case "MelikeKara":
-  //  return new MelikeKaraSnake(x, y);
+    case "MelikeKaraSnake":
+      return new MelikeKaraSnake(x, y);
   case "NaomiVegaSnake":
     return new NaomiVegaSnake(x, y);
   case "NatalieSottekSnake":
@@ -177,8 +252,8 @@ Snake spawnNewSnake(int x, int y, String name) {
     return new NickMorrisSnake(x, y);
   case "NicoleCainSnake":
     return new NicoleCainSnake(x, y);
-  //case "NoahRutledgeSnake":
-  //  return new NoahRutledgeSnake(x, y);
+  case "NoahRutledgeSnake":
+    return new NoahRutledgeSnake(x, y);
   case "OllieOtouBranckaertSnake":
     return new OllieOtouBranckaertSnake(x, y);
   case "RenBairdSnake":
