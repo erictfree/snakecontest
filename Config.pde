@@ -14,7 +14,7 @@ String[] snakeNames1 = new String[] {
   "AvaCarzolaSnake",
   "BriannaTorresSnake",
   "BeccaYoungersSnake",
-    "BrandonWickenSnake",
+  "BrandonWickenSnake",
   "CameronAllisonSnake",
   "CarlyMillsSnake",
   "CharisElkintonSnake",
@@ -49,10 +49,10 @@ String[] snakeNames2 = new String[] {
   "JosiahVillarrealFloresSnake",
 
 };
-  
-  String[] snakeNames = new String[] {
 
-  "KalebAzizSnake",  // invsible
+String[] snakeNames = new String[] {
+
+  "KalebAzizSnake", // invsible
   "KattiaMoralesSnake",
   "KayliePerezSnake",
   "KaylaMarinSnake",
@@ -62,7 +62,7 @@ String[] snakeNames2 = new String[] {
   "KylaPatelSnake",
   "LanaNguyenSnake",
   "LaurenCogbillSnake",
-   "LaurenFinnertySnake",
+  "LaurenFinnertySnake",
   "LillianCoan",
   "LinhTranSnake",
   "LuisTorresMillanSnake",
@@ -78,10 +78,10 @@ String[] snakeNames2 = new String[] {
 
 
 };
-  
-  String[] snakeNames4 = new String[] {
-      "OllieOtouBranckaertSnake",
-      "RenBairdSnake",
+
+String[] snakeNames4 = new String[] {
+  "OllieOtouBranckaertSnake",
+  "RenBairdSnake",
   "ReginaAvilaSnake",
   "RinNishiwakiSnake",
   "RosalindaJoachimSnake",
@@ -101,27 +101,31 @@ String[] snakeNames2 = new String[] {
   "YarisAmayaOrellanaSnake",
   //"MichelleEstrellaSnake",
   "VanessaFloresSnake",
-    "JovannaMolinaSnake",
-      "CrystalNguyenSnake"
-  };
+  "JovannaMolinaSnake",
+  "CrystalNguyenSnake",
+  "MichaelGameSnake"
+};
 
 
 
 
 Snake spawnNewSnake(int x, int y, String name) {
   switch (name) {
-     case "YarisAmayaOrellanaSnake":
+
+  case "MichaelGameSnake":
+    return new MichaelGameSnake(x, y);
+  case "YarisAmayaOrellanaSnake":
     return new YarisAmayaOrellanaSnake(x, y);
-    case "SkylarEvansSnake":
-return new SkylarEvansSnake(x,y);
-    case "KimNguyenSnake":
-return new KimNguyenSnake(x,y);
-case "AllysonSalasSnake":
-return new AllysonSalasSnake(x,y);
-case "LaurenFinnertySnake":
+  case "SkylarEvansSnake":
+    return new SkylarEvansSnake(x, y);
+  case "KimNguyenSnake":
+    return new KimNguyenSnake(x, y);
+  case "AllysonSalasSnake":
+    return new AllysonSalasSnake(x, y);
+  case "LaurenFinnertySnake":
     return new LaurenFinnertySnake(x, y);
-//case "KylaPatelSnake":
-//    return new KylaPatelSnake(x, y);
+    case "KylaPatelSnake":
+        return new KylaPatelSnake(x, y);
   case "ThomasChunSnake":
     return new ThomasChunSnake(x, y);
   case "TanmayeeBharadwajSnake":
@@ -242,8 +246,8 @@ case "LaurenFinnertySnake":
     return new LinhTranSnake(x, y);
   case "MarcoHurtadoSnake":
     return new MarcoHurtadoSnake(x, y);
-    case "MelikeKaraSnake":
-      return new MelikeKaraSnake(x, y);
+  case "MelikeKaraSnake":
+    return new MelikeKaraSnake(x, y);
   case "NaomiVegaSnake":
     return new NaomiVegaSnake(x, y);
   case "NatalieSottekSnake":

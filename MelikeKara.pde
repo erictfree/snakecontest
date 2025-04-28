@@ -8,7 +8,7 @@
 class MelikeKaraSnake extends Snake {
   MelikeKaraSnake(int x, int y) {
     super(x, y, "MelikeKara");
-    debug=true;
+
   }
 
   void think(ArrayList<Food> food, ArrayList<Snake> snakes) {
